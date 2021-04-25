@@ -1,4 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.h-90 {
+  height: 90%
+}
+
+.small-icon {
+  font-size: 20px;
+}
+
+.medium-icon {
+  font-size: 30px;
+}
+
+.large-icon {
+  font-size: 50px;
+}
+
+.small-text {
+  font-size: 11px;
+  line-height: 1.1rem;
+}
+
+.medium-text {
+  font-size: 15px;
+  line-height: 1.25rem;
+}
+
+.large-text {
+  font-size: 25px;
+  line-height: 1.9rem;
+}
+
+.bg-grey {
+  background-color: rgba(226, 226, 226, 0.3);
+}
+
+.font-weight-semibold {
+  font-weight: 500;
+}

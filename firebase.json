@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/wedding-virtual-guest-message-book",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Add Wedding</h2>
+<form [formGroup]="addWeddingForm">
+  <mat-form-field class="my-1">
+    <mat-label>Groom Name</mat-label>
+    <input type="text" matInput formControlName="groomName">
+  </mat-form-field>
+  <mat-form-field class="my-1">
+    <mat-label>Bride Name</mat-label>
+    <input type="text" matInput formControlName="brideName">
+  </mat-form-field>
+  <mat-form-field class="my-1">
+    <mat-label>Wedding Date</mat-label>
+    <input matInput formControlName="date" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="my-2">
+    <button (click)="cancelAddWedding()" mat-raised-button class="mx-2" color="warn">Cancel</button>
+    <button type="submit" (click)="confirmAddWedding()" mat-raised-button class="mx-2" color="primary">Confirm</button>
+  </div>
+</form>

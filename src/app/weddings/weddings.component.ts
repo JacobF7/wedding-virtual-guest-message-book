@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WeddingsService} from './weddings.service';
+import {Wedding} from './wedding.model';
+import {AddWeddingDialogComponent} from './add-wedding-dialog/add-wedding-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-weddings',
@@ -7,9 +12,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeddingsComponent implements OnInit {
 
-  constructor() { }
+  weddings: Wedding[] | undefined;
 
-  ngOnInit(): void {
+  constructor(public dialog: MatDialog,
+              private weddingsService: WeddingsService) {
   }
 
+  ngOnInit(): void {
+    this.getWeddings();
+  }
+
+  private getWeddings(): void {
+    this.weddings = undefined;
+    this.weddingsService.getWeddings().pipe(delay(500))
+      .subscribe(weddings => this.weddings = weddings);
+  }
+
+  openAddWeddingDialog(): void {
+    const addWeddingDialog = this.dialog.open(AddWeddingDialogComponent, {
+      width: '250px',
+    });
+
+    addWeddingDialog.afterClosed().subscribe(result => {
+      if (result) {
+        this.getWeddings();
+      }
+    });
+  }
 }

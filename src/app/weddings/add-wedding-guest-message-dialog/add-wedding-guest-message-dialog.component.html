@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Add Guest Message</h2>
+<form [formGroup]="addGuestMessageForm">
+  <mat-form-field class="my-1">
+    <mat-label>Guest Name</mat-label>
+    <input type="text" matInput formControlName="guestName">
+  </mat-form-field>
+  <mat-form-field class="my-1 pb-2" [hintLabel]="getRemainingMessageCharacters() + ' characters remaining'">
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message" [maxLength]="maxMessageLength" rows="5"></textarea>
+  </mat-form-field>
+
+  <div class="my-2">
+    <button (click)="cancelAddGuestMessage()" mat-raised-button class="mx-2" color="warn">Cancel</button>
+    <button type="submit" (click)="confirmAddGuestMessage()" mat-raised-button class="mx-2" color="primary">Confirm</button>
+  </div>
+</form>

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  firebaseApiUrl: 'https://wedding-guest-message-book-default-rtdb.europe-west1.firebasedatabase.app/'
 };

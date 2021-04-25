@@ -1,1 +1,27 @@
-<p>weddings works!</p>
+<mat-toolbar color="primary">
+  <div class="w-100">
+    <span>Weddings</span>
+    <button class="float-right" mat-icon-button aria-label="add wedding button" (click)="openAddWeddingDialog()">
+      <mat-icon>library_add</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div class="bg-grey h-100">
+  <mat-nav-list *ngIf="weddings else loading">
+    <a mat-list-item *ngFor="let wedding of weddings" [routerLink]="['/', 'weddings', wedding.id]">
+      <mat-icon mat-list-icon>supervised_user_circle</mat-icon>
+      <div mat-line>{{wedding.groomName}} & {{wedding.brideName}}</div>
+      <div mat-line class="text-muted"> {{wedding.date | date}} </div>
+      <button mat-icon-button aria-label="navigate to guest messages" [routerLink]="['/', 'weddings', wedding.id]">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+      <mat-divider></mat-divider>
+    </a>
+  </mat-nav-list>
+</div>
+
+<ng-template #loading>
+  <div class="row h-90 d-flex flex-row justify-content-center align-items-center">
+    <mat-progress-spinner diameter="50" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-template>

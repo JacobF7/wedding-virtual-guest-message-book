@@ -1,1 +1,62 @@
-<p>wedding-guest-messages works!</p>
+<div class="h-100 bg-grey">
+
+  <div *ngIf="weddingGuestMessages && wedding else loading">
+    <img class="wedding-image" src="/assets/img/wedding-table.jpg" alt="wedding-image">
+
+    <div class="row d-flex flex-row justify-content-center mr-0">
+      <mat-card class="wedding-details-card">
+        <mat-card-title class="text-muted pb-3">Welcome!</mat-card-title>
+        <mat-card-content>
+          <p>
+            Welcome to <strong>{{wedding.groomName}} & {{wedding.brideName}}'s</strong> wedding! We hope that you enjoy this wedding.
+            In the meantime, if you could spare some time to leave us a message, we would deeply appreciate this kind gesture.
+            We hope that you enjoy the wedding!
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" class="view-menu-button">View Menu
+            <mat-icon class="px-2 small-icon">restaurant</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="my-4 d-flex">
+      <swiper [width]="140" [spaceBetween]="10">
+
+        <ng-template swiperSlide>
+          <mat-card class="add-message-card" matRipple (click)="openAddWeddingGuestMessageDialog()">
+            <mat-card-content class="text-white-50 py-2">
+              <mat-icon class="py-2 large-icon">message</mat-icon>
+              <p class="py-2 large-text font-weight-bold">Add<br/>Your<br/>Message</p>
+              <mat-icon class="medium-icon float-right">chevron_right</mat-icon>
+            </mat-card-content>
+          </mat-card>
+        </ng-template>
+
+        <ng-template *ngFor="let guestMessage of weddingGuestMessages" swiperSlide>
+          <mat-card class="guest-message-card">
+            <mat-icon class="top-right-card-icon">format_quote</mat-icon>
+
+            <mat-card-content class="h-100">
+              <div class="row h-100 d-flex flex-row justify-content-between pt-2">
+                <div class="col-12 h-75">
+                  <p>{{guestMessage.message}}</p>
+                </div>
+                <div class="col-12 h-25">
+                  <p class="medium-text text-muted text-right font-italic font-weight-semibold mt-2 mb-0">{{guestMessage.guestName}}</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="row h-100 d-flex flex-row justify-content-center align-items-center">
+    <mat-progress-spinner diameter="50" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-template>
