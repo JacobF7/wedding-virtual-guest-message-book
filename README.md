@@ -2,6 +2,8 @@
 
 This application is intended to be used by guests attending a wedding in order to dedicate a message to the bride and groom. 
 
+The webapp may be accessed from [here](https://wedding-guest-message-book.web.app/).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
 ## Development server
