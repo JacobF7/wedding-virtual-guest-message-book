@@ -58,4 +58,12 @@ export class WeddingGuestMessagesComponent implements OnInit {
     });
   }
 
+  isMariaAndClayton(): boolean {
+    return this.wedding?.groomName === 'Clayton' && this.wedding?.brideName === 'Maria';
+  }
+
+  openMariaAndClaytonMenu(): void {
+    window.open('/assets/menu/Maria-Clayton-Wedding-Menu.pdf', '_blank');
+  }
+
 }

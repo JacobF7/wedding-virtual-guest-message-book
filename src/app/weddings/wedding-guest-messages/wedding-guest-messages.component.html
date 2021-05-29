@@ -1,9 +1,11 @@
-<div class="h-100 bg-grey">
+<div class="h-100 bg-marble">
 
   <div *ngIf="weddingGuestMessages && wedding else loading">
-    <img class="wedding-image" src="/assets/img/wedding-table.jpg" alt="wedding-image">
+    <img [hidden]="isMariaAndClayton()" class="wedding-image" src="/assets/img/wedding-table.jpg" alt="wedding-image">
+    <img *ngIf="isMariaAndClayton()" class="clayton-and-maria-wedding-image hide-large"
+         src="/assets/img/maria-and-clayton-wedding-header.png" alt="clayton-and-maria-wedding-image">
 
-    <div class="row d-flex flex-row justify-content-center mr-0">
+    <div class="row d-flex flex-row justify-content-center">
       <mat-card class="wedding-details-card">
         <mat-card-title class="text-muted pb-3">Welcome!</mat-card-title>
         <mat-card-content>
@@ -13,8 +15,9 @@
             We hope that you enjoy the wedding!
           </p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary" class="view-menu-button">View Menu
+        <mat-card-actions *ngIf="isMariaAndClayton()">
+          <button mat-raised-button color="primary" class="view-menu-button" (click)="openMariaAndClaytonMenu()">
+            View Menu
             <mat-icon class="px-2 small-icon">restaurant</mat-icon>
           </button>
         </mat-card-actions>

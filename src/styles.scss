@@ -38,6 +38,16 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
   background-color: rgba(226, 226, 226, 0.3);
 }
 
+.bg-marble {
+  background-image: url("~src/assets/img/background.jpg");
+}
+
 .font-weight-semibold {
   font-weight: 500;
+}
+
+@media screen and (min-width: 500px) {
+  .hide-large {
+    opacity: 0;
+  }
 }

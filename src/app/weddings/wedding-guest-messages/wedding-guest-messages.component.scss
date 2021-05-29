@@ -4,12 +4,19 @@
   object-fit: cover;
 }
 
+.clayton-and-maria-wedding-image {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+}
+
 .wedding-details-card {
   position: relative;
   top: -120px;
   padding: 20px;
   margin-bottom: -120px;
   width: 75%;
+  max-width: 700px;
   border-radius: 10px;
   box-shadow: 1px 2px 1px 3px lightgrey;
 }
