@@ -17,9 +17,13 @@
           </p>
         </mat-card-content>
         <mat-card-actions *ngIf="isMariaAndClayton()">
-          <button mat-raised-button color="primary" class="view-menu-button" (click)="openMariaAndClaytonMenu()">
-            View Menu
-            <mat-icon class="px-2 small-icon">restaurant</mat-icon>
+          <button mat-raised-button color="primary" class="view-menu-button small-text" (click)="openMariaAndClaytonFoodMenu()">
+            Food Menu
+            <mat-icon class="pl-1 small-icon">restaurant</mat-icon>
+          </button>
+          <button mat-raised-button color="primary" class="view-menu-button small-text" (click)="openMariaAndClaytonDrinksMenu()">
+            Drinks Menu
+            <mat-icon class="pl-1 small-icon">local_bar</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>

@@ -62,8 +62,11 @@ export class WeddingGuestMessagesComponent implements OnInit {
     return this.wedding?.groomName === 'Clayton' && this.wedding?.brideName === 'Maria';
   }
 
-  openMariaAndClaytonMenu(): void {
-    window.open('/assets/menu/Maria-Clayton-Wedding-Menu.pdf', '_blank');
+  openMariaAndClaytonFoodMenu(): void {
+    window.open('/assets/menu/Maria-Clayton-Wedding-Food-Menu.pdf', '_blank');
   }
 
+  openMariaAndClaytonDrinksMenu(): void {
+    window.open('/assets/menu/Maria-Clayton-Wedding-Drinks-Menu.pdf', '_blank');
+  }
 }
